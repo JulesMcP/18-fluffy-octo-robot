@@ -11,7 +11,7 @@ const ReactionSchema = new Schema(
         reactionBody: {
             type: String,
             required: true,
-            maximum: 280
+            maximum: [280, 'Must use no more than 280 characters, got {VALUE}']
         },
         username: {
             type: String,
@@ -36,8 +36,8 @@ const ThoughtSchema = new Schema(
         thoughtText: {
             type: String,
             required: true,
-            minimum: 1,
-            maximum: 280
+            minimum: [1, 'Must have at least one character, got {VALUE}'],
+            maximum: [280, 'You have exceeded the limit of 280 characters, got {VALUE}']
         },
         createdAt: {
             type: Date,

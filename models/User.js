@@ -12,9 +12,8 @@ const UserSchema = new Schema(
         email: {
             type: String,
             required: true,
-            unique: true,
-            //Must match a valid email address 
-            //validate: 
+            match: /.+\@.+\..+/,
+            unique: true
         },
         // Array of _id values referencing the Thought model
         thoughts: [
