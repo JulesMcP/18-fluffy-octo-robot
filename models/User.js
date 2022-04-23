@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const dateFormat = require('../utils/dateFormat');
+const Thought = require('./Thought');
 
 const UserSchema = new Schema(
     {
@@ -33,7 +33,6 @@ const UserSchema = new Schema(
     {
         toJSON: {
             virtuals: true,
-            getters: true
         },
         // prevents virtuals from creating duplicate of _id as `id`
         id: false
