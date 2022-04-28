@@ -11,7 +11,9 @@ const ReactionSchema = new Schema(
         reactionBody: {
             type: String,
             required: true,
-            max: [280, 'Must use no more than 280 characters, got {VALUE}']
+            min: [1, 'Must have at least one character, got {VALUE}'],
+            max: [280, 'Must use no more than 280 characters, got {VALUE}'],
+            trim: true
         },
         username: {
             type: String,
@@ -21,7 +23,7 @@ const ReactionSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
-            get: createdAtVal => dateFormat(createdAtVal)
+            get: (createdAtVal) => dateFormat(createdAtVal)
         }
     },
     {
@@ -37,7 +39,8 @@ const ThoughtSchema = new Schema(
             type: String,
             required: true,
             min: [1, 'Must have at least one character, got {VALUE}'],
-            max: [280, 'You have exceeded the limit of 280 characters, got {VALUE}']
+            max: [280, 'You have exceeded the limit of 280 characters, got {VALUE}'],
+            trim: true
         },
         createdAt: {
             type: Date,
@@ -60,7 +63,7 @@ const ThoughtSchema = new Schema(
     }
 );
 
-Thought.virtual('reactionCount').get(function() {
+ThoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;
 });
 

@@ -12,7 +12,7 @@ const UserSchema = new Schema(
         email: {
             type: String,
             required: true,
-            match: /.+\@.+\..+/,
+            match: [/.+\@.+\..+/],
             unique: true
         },
         // Array of _id values referencing the Thought model
@@ -33,6 +33,7 @@ const UserSchema = new Schema(
     {
         toJSON: {
             virtuals: true,
+            getters: true
         },
         // prevents virtuals from creating duplicate of _id as `id`
         id: false
