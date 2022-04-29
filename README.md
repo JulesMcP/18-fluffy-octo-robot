@@ -47,9 +47,10 @@ You may direct any questions about the project to [JulesMcP](https://github.com/
 This project was developed under the GNU license.
 [More information about MIT](https://opensource.org/licenses/MIT)
 
-## Screenshots
-
+## Screenshot
+![image](https://user-images.githubusercontent.com/95149604/165863755-ed91f515-44a2-4a52-9ae8-eadb594c862f.png)
 
 ## Walkthrough Video
+[Check out the walkthrough video here.](https://drive.google.com/file/d/1AiZRhcKFhJAOUJxXdpOQmjKoPgavfg6n/view)
 
 
